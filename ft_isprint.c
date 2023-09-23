@@ -1,8 +1,6 @@
-int isprint(int c)
+int	ft_is_printable(char c)
 {
-	if(c == 127 || (c >= 0 && c <= 31))
-	{
-		return (0);
-	}
-	return (1);
+	if ((c >= 32 && c <= 126) || (c == '\n'))
+		return (1);
+	return (0);
 }
