@@ -1,21 +1,30 @@
-#include <stdlib.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hp-mohamed <hp-mohamed@student.42.fr>      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/10/11 21:57:43 by hp-mohamed        #+#    #+#             */
+/*   Updated: 2023/10/11 21:57:44 by hp-mohamed       ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-char	*ft_strchr(const char *str, int ch)
+#include <stddef.h>
+
+char	*ft_strchr(const char *s, int c)
 {
-	int		i;
-	char	c;
-	char	*s;
+	size_t	i;
 
 	i = 0;
-	c = (char)ch;
-	s = (char *)str;
-	while (s[i])
+	while (*s != 0)
 	{
-		if (s[i] == c)
-			return (s + i);
-		i++;
+		if (*s == c)
+		{
+			return ((char *)s);
+		}
+		else
+			s++;
 	}
-	if (s[i] == '\0' && c == '\0')
-		return (s + i);
-	return (NULL);
+	return (0);
 }
