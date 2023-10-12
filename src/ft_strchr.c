@@ -1,25 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hp-mohamed <hp-mohamed@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/11 21:57:24 by hp-mohamed        #+#    #+#             */
-/*   Updated: 2023/10/11 21:57:25 by hp-mohamed       ###   ########.fr       */
+/*   Created: 2023/10/11 21:57:43 by hp-mohamed        #+#    #+#             */
+/*   Updated: 2023/10/11 22:54:59 by hp-mohamed       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
 
-void	*ft_bzero(void *s, size_t n)
+char	*ft_strchr(const char *s, int c)
 {
-	size_t	i;
-
-	i = 0;
-	while (i < n)
+	while (*s != 0)
 	{
-		((unsigned char *)s)[i] = '\0';
-		i++;
+		if (*s == c)
+		{
+			return ((char *)s);
+		}
+		else
+			s++;
 	}
+	return (0);
 }

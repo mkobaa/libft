@@ -1,4 +1,0 @@
-char *strrev(char * s)
-{
-    
-}
