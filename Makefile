@@ -1,36 +1,29 @@
-# Makefile for libft library
-
 NAME = libft.a
 
 SRC_DIR = src
-OBJ_DIR = obj
-INC_DIR = includes
+INC_DIR = include
 
-SRCS = $(wildcard $(SRC_DIR)/ft_*.c)
-OBJS = $(patsubst $(SRC_DIR)/%.c, $(OBJ_DIR)/%.o, $(SRCS))
+SRC = $(wildcard $(SRC_DIR)/*.c)
+OBJ = $(SRC:$(SRC_DIR)/%.c=%.o)
 
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror
-AR = ar rc
-RM = rm -f
+INC = -I $(INC_DIR)
 
 all: $(NAME)
 
-$(OBJ_DIR)/%.o: $(SRC_DIR)/%.c | $(OBJ_DIR)
-	$(CC) $(CFLAGS) -I$(INC_DIR) -c $< -o $@
+$(NAME): $(OBJ)
+	ar rc $@ $^
+	ranlib $@
 
-$(OBJ_DIR):
-	mkdir -p $(OBJ_DIR)
-
-$(NAME): $(OBJS)
-	$(AR) $(NAME) $(OBJS)
+%.o: $(SRC_DIR)/%.c
+	$(CC) $(CFLAGS) $(INC) -c $< -o $@
 
 clean:
-	$(RM) $(OBJS)
-	rmdir $(OBJ_DIR)
+	rm -f $(OBJ)
 
 fclean: clean
-	$(RM) $(NAME)
+	rm -f $(NAME)
 
 re: fclean all
 
