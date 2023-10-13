@@ -1,31 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hp-mohamed <hp-mohamed@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/13 01:16:58 by hp-mohamed        #+#    #+#             */
-/*   Updated: 2023/10/13 03:14:19 by hp-mohamed       ###   ########.fr       */
+/*   Created: 2023/10/13 03:14:26 by hp-mohamed        #+#    #+#             */
+/*   Updated: 2023/10/13 03:33:06 by hp-mohamed       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/libft.h"
 #include <stddef.h>
-#include <stdio.h>
 
-char    *ft_strrchr(const char *s, int c)
+int ft_strncmp(const char *s1, const char *s2, size_t n)
 {
     int i;
-    
-    i = ft_strlen(s);
-    while (i >= 0)
+
+    i = 0;
+    while (i < n)
     {
-        if(s[i] == c)
+        if (s1[i] == s2[i])
         {
-            return ((char *)(&s[i]));
+            i++;
         }
-        i--;
+        else
+            return (s1[i] - s2[i]);
     }
     return 0;
+}
+
+#include <stdio.h>
+int main(void)
+{
+    char s1[] = "Mohamed";
+    char s2[] = "Mohaned";
+    printf("%d", ft_strncmp(s1, s2, 10));
 }
