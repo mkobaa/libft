@@ -6,7 +6,7 @@
 /*   By: hp-mohamed <hp-mohamed@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/13 03:14:26 by hp-mohamed        #+#    #+#             */
-/*   Updated: 2023/10/13 03:33:06 by hp-mohamed       ###   ########.fr       */
+/*   Updated: 2023/10/13 15:05:23 by hp-mohamed       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-    int i;
+    unsigned int i;
 
     i = 0;
     while (i < n)
