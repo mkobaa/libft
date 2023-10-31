@@ -1,21 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hp-mohamed <hp-mohamed@student.42.fr>      +#+  +:+       +#+        */
+/*   By: mkobaa <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/11 21:57:30 by hp-mohamed        #+#    #+#             */
-/*   Updated: 2023/10/11 23:33:14 by hp-mohamed       ###   ########.fr       */
+/*   Created: 2023/10/31 11:36:34 by mkobaa            #+#    #+#             */
+/*   Updated: 2023/10/31 13:28:05 by mkobaa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isalpha(int c)
+#include "libft.h"
+
+size_t	ft_strlen(const char *s)
 {
-	if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'z'))
+	int	i;
+
+	i = 0;
+	while (s[i] != 0)
 	{
-		return (1);
+		i++;
 	}
-	else
-		return (0);
+	return (i);
 }
+/*
+#include <stdio.h>
+int main() 
+{
+	char str[] = "Hello, world!";
+	printf("%zu", ft_strlen(str));
+}
+*/

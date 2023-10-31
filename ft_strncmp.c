@@ -3,36 +3,41 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hp-mohamed <hp-mohamed@student.42.fr>      +#+  +:+       +#+        */
+/*   By: mkobaa <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/13 03:14:26 by hp-mohamed        #+#    #+#             */
-/*   Updated: 2023/10/13 15:05:23 by hp-mohamed       ###   ########.fr       */
+/*   Created: 2023/10/31 14:57:00 by mkobaa            #+#    #+#             */
+/*   Updated: 2023/10/31 15:35:51 by mkobaa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "libft.h"
 
-#include <stddef.h>
-
-int ft_strncmp(const char *s1, const char *s2, size_t n)
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-    unsigned int i;
+	size_t	i;
 
-    i = 0;
-    while (i < n)
-    {
-        if (s1[i] == s2[i])
-        {
-            i++;
-        }
-        else
-            return (s1[i] - s2[i]);
-    }
-    return 0;
+	while (i < n)
+	{
+		if (s1[i] == s2[i])
+		{
+			i++;
+		}
+		else 
+		{
+			return (s1[i] - s2[i]);
+		}
+	}
+	return (0);
 }
-
-#include <stdio.h>
-int main(void)
+/*
+int main()
 {
-    char s1[] = "Mohamed";
-    char s2[] = "Mohaned";
-    printf("%d", ft_strncmp(s1, s2, 10));
+	char s1[] = "Mohamed";
+	char s2[] = "Moaamed";
+	int rslt;
+	int rslt2;
+	rslt = ft_strncmp(s1, s2, 5);
+	rslt2 = strncmp(s1, s2, 5);
+	printf("%d\n", rslt);
+	printf("%d\n", rslt2);
 }
+*/

@@ -1,27 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_isascii.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hp-mohamed <hp-mohamed@student.42.fr>      +#+  +:+       +#+        */
+/*   By: mkobaa <mkobaa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/11 21:57:43 by hp-mohamed        #+#    #+#             */
-/*   Updated: 2023/10/11 22:54:59 by hp-mohamed       ###   ########.fr       */
+/*   Created: 2023/10/30 20:30:41 by mkobaa            #+#    #+#             */
+/*   Updated: 2023/10/30 20:40:23 by mkobaa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
-
-char	*ft_strchr(const char *s, int c)
+int	ft_isascii(int c)
 {
-	while (*s != 0)
+	if (c >= 0 && c <= 127)
 	{
-		if (*s == c)
-		{
-			return ((char *)s);
-		}
-		else
-			s++;
+		return (1);
 	}
 	return (0);
 }
+
+/*
+#include <stdio.h>
+int main()
+{
+	int c;
+	c = '1';
+	printf("%d", ft_isalpha(c));
+}
+*/

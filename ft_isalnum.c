@@ -1,23 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   ft_isalnum.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hp-mohamed <hp-mohamed@student.42.fr>      +#+  +:+       +#+        */
+/*   By: mkobaa <mkobaa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/11 21:57:35 by hp-mohamed        #+#    #+#             */
-/*   Updated: 2023/10/11 23:34:01 by hp-mohamed       ###   ########.fr       */
+/*   Created: 2023/10/30 20:29:22 by mkobaa            #+#    #+#             */
+/*   Updated: 2023/10/30 20:29:35 by mkobaa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isdigit(int c)
+int	ft_isalnum(int c)
 {
-	if ((c >= '0' && c <= '9'))
+	if ((c <= '9' && c >= '0') 
+		|| (c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
 	{
 		return (1);
 	}
-	else
-	{
-		return (0);
-	}
+	return (0);
 }
+
+/*
+#include <stdio.h>
+int main()
+{
+	int c;
+	c = 'F';
+	printf("%d", ft_isalnum(c));
+}
+*/

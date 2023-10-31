@@ -1,21 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isascii.c                                       :+:      :+:    :+:   */
+/*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hp-mohamed <hp-mohamed@student.42.fr>      +#+  +:+       +#+        */
+/*   By: mkobaa <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/11 21:57:32 by hp-mohamed        #+#    #+#             */
-/*   Updated: 2023/10/11 23:33:34 by hp-mohamed       ###   ########.fr       */
+/*   Created: 2023/10/31 14:44:13 by mkobaa            #+#    #+#             */
+/*   Updated: 2023/10/31 14:55:24 by mkobaa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isascii(int c)
+#include "libft.h"
+
+int	ft_tolower(int c)
 {
-	if (c >= 0 && c <= 127)
+	if (c >= 'A' && c <= 'Z')
 	{
-		return (1);
+		c += 32;
 	}
-	else
-		return (0);
+	return (c);
 }
+
+/*
+int main()
+{
+	char c;
+	char lower;
+	c = 'h';
+	lower = ft_tolower(c);
+	printf("%c", lower);
+}
+*/

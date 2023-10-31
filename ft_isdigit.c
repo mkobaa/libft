@@ -1,20 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tolower.c                                       :+:      :+:    :+:   */
+/*   ft_isdigit.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hp-mohamed <hp-mohamed@student.42.fr>      +#+  +:+       +#+        */
+/*   By: mkobaa <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/11 21:57:48 by hp-mohamed        #+#    #+#             */
-/*   Updated: 2023/10/11 23:35:46 by hp-mohamed       ###   ########.fr       */
+/*   Created: 2023/10/30 14:58:02 by mkobaa            #+#    #+#             */
+/*   Updated: 2023/10/30 15:04:12 by mkobaa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_tolower(int c)
-{
-	if (c >= 'A' && c <= 'Z')
+int	ft_isdigit(int c)
 	{
-		c = c + 32;
+	if (c <= '9' && c >= '0')
+	{
+		return (1);
 	}
-	return (c);
+	return (0);
 }
+
+/*
+#include <stdio.h>
+int main()
+{
+	int c;
+	c = 'f';
+	printf("%d", ft_isdigit(c));
+}
+*/

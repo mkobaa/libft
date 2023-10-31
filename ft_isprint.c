@@ -1,20 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_toupper.c                                       :+:      :+:    :+:   */
+/*   ft_isprint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hp-mohamed <hp-mohamed@student.42.fr>      +#+  +:+       +#+        */
+/*   By: mkobaa <mkobaa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/11 21:57:51 by hp-mohamed        #+#    #+#             */
-/*   Updated: 2023/10/11 21:57:52 by hp-mohamed       ###   ########.fr       */
+/*   Created: 2023/10/30 20:42:59 by mkobaa            #+#    #+#             */
+/*   Updated: 2023/10/31 14:30:18 by mkobaa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_toupper(int c)
+int	ft_isprint(int c)
 {
-	if (c >= 'a' && c <= 'z')
+	if (c >= 31 && c < 127)
 	{
-		c = c - 32;
+		return (1);
 	}
-	return (c);
+	return (0);
 }
+
+/*
+#include <stdio.h>
+int main()
+{
+	int c;
+	c = '\0';
+	printf("%d", ft_isprint(c));
+}
+*/
